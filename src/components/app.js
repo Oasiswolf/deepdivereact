@@ -9,9 +9,6 @@ export default class App extends Component {
         <h1>DevCamp React Starter</h1>
         <h2>React Redux Router</h2>
         <JournalList heading="List 1" />
-        <JournalList heading="List 2" />
-        <JournalList heading="List 3" />
-        <JournalList heading="List 4" />
       </div>
     );
   }

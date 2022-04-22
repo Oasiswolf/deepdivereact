@@ -23,11 +23,19 @@ export default class JournalList extends Component {
     }
 
   render() {
+      const journalEntries = this.state.journalData.map(journalEntry => {
+        return (
+          <div key={journalEntry.title}>
+            <JournalEntry title={journalEntry.title} content={journalEntry.content} status={journalEntry.status} />
+          </div>
+        )
+      })
     return (
       <div>
-          <h2>Check Out This {this.props.heading}</h2>
-          <h3>{this.state.greeting}</h3>
-          <JournalEntry title="Awesome Title" content="Some More Awesome Content" />
+          {/* <h2>Check Out This {this.props.heading}</h2>
+          <h3>{this.state.greeting}</h3> */}
+          {/* <JournalEntry title="Awesome Title" content="Some More Awesome Content" /> */}
+          {journalEntries}
       </div>
     )
   }
