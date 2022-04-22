@@ -11,16 +11,40 @@ const rawJournalData = [
 
 
 export default class JournalList extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props)
 
-        this.state = {
-            journalData: rawJournalData,
-            isOpen: true,
-            greeting: "Howdy There",
+    this.state = {
+        journalData: rawJournalData,
+        isOpen: true,
+        greeting: "Howdy There",
 
-        }
     }
+  }
+
+  clearEntries = () => {
+    this.setState({journalData:[], isOpen:false})
+  }
+
+  showEntries = () => {
+    this.setState({journalData:rawJournalData, isOpen:true})
+  }
+
+  toggleStatus = () => {
+    if (this.state.isOpen) {
+      this.setState({ journalData:[], isOpen:false})
+    }else {
+      this.setState({ journalData:rawJournalData, isOpen:true})
+    }
+  }
+
+  toggleButton = () => {
+    if (button.name = clear){
+      style={display: none}
+    }
+  }
+      
+
 
   render() {
       const journalEntries = this.state.journalData.map(journalEntry => {
@@ -32,10 +56,13 @@ export default class JournalList extends Component {
       })
     return (
       <div>
-          {/* <h2>Check Out This {this.props.heading}</h2>
-          <h3>{this.state.greeting}</h3> */}
+          <button onClick={this.clearEntries} name="clear">Clear Entries</button>
+          <button onClick={this.showEntries} name="show">Show Entries</button>
+          <button onClick={this.toggleStatus}>Toggle Entries</button>
+          <h2>Check Out This {this.props.heading}</h2>
+          {/* <h3>{this.state.greeting}</h3> */}
           {/* <JournalEntry title="Awesome Title" content="Some More Awesome Content" /> */}
-          {journalEntries}
+          <h3>{journalEntries}</h3>
       </div>
     )
   }
