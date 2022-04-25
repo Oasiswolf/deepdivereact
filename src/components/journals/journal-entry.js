@@ -11,4 +11,3 @@ export const JournalEntry = props => {
         </div>
     )
 } 
-

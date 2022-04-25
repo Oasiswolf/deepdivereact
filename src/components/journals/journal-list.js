@@ -30,13 +30,19 @@ export default class JournalList extends Component {
     this.setState({journalData:rawJournalData, isOpen:true})
   }
 
+  // toggleStatus = () => {
+  //   if (this.state.isOpen) {
+  //     this.setState({ journalData:[], isOpen:false})
+  //   }else {
+  //     this.setState({ journalData:rawJournalData, isOpen:true})
+  //   }
+  // }
   toggleStatus = () => {
-    if (this.state.isOpen) {
-      this.setState({ journalData:[], isOpen:false})
-    }else {
-      this.setState({ journalData:rawJournalData, isOpen:true})
-    }
+  this.state.isOpen ? this.setState({journalData:[], isOpen:false}) : this.setState({journalData:rawJournalData, isOpen:true})
   }
+ 
+
+
 
   toggleButton = () => {
     if (button.name = clear){
